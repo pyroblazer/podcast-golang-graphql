@@ -65,7 +65,7 @@ func (ias *ItunesApiServices) Search(term string) (SearchResponse, error) {
 	searchUrl := url.URL {
 		Scheme: "https",
 		Host: "itunes.apple.com",
-		Path: "search,"
+		Path: "search",
 	}
 	
 	q := searchUrl.Query()
@@ -80,7 +80,7 @@ func (ias *ItunesApiServices) Search(term string) (SearchResponse, error) {
 		return SearchResponse{}, err
 	}
 
-	defer res.Body.close()
+	defer res.Body.Close()
 
 	var searchResponse SearchResponse
 
